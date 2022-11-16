@@ -2,7 +2,7 @@
 
   I added a lot of lines, here's a summary of my changes:
   - I added **Staff.java** and **Staffs.java**. Right now they're just copies of student and students.java with student replaced with staff
-    I still need to make them work and I want to add ITStaff too. 
+    I still need to make them work and I want to add Admin too. 
     
   - I made it so there's no limit on the amount of books, the array gets bigger if you try to add one outside the size of the current array
     I did this by changing the array in Books.java from **Book theBook[] = new Book[50];** into **Book theBook[] = new Book[n]** and implemented n to change.
