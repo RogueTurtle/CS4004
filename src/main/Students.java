@@ -2,6 +2,7 @@
 // To Do all the Operations related to Students:
 // add Students,check-in books,check out books,ValidStudent
 package main;
+import java.time.LocalDate;
 // Importing required classes
 import java.util.Scanner;
 
@@ -101,6 +102,7 @@ public class Students {
 							.BooksCount]
 						= b;
 					theStudents[StudentIndex].BooksCount++;
+					
 
 					return;
 				}
@@ -154,5 +156,10 @@ public class Students {
 			System.out.println("Book of Serial No " + sNo
 							+ "not Found");
 		}
+	}
+	public void overdueCheck() {
+		LocalDate nowDate = LocalDate.now();
+		
+		
 	}
 }
