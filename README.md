@@ -1,8 +1,12 @@
 ## Updates
 
   I added a lot of lines, here's a summary of my changes:
+  - I added **Staff.java** and **Staffs.java**. Right now they're just copies of student and students.java with student replaced with staff
+    I still need to make them work and I want to add ITStaff too. 
+    
   - I made it so there's no limit on the amount of books, the array gets bigger if you try to add one outside the size of the current array
     I did this by changing the array in Books.java from **Book theBook[] = new Book[50];** into **Book theBook[] = new Book[n]** and implemented n to change.
+    I haven't tested this, I'm 90% sure that it works but until I add tools for ITStaff to edit the whole system we'll have to wait to test it.
     
   - I added a menu before the library menu. It asks if you're a student, staff or IT staff and then presents the appropiate options. 
     I still need to add verification but it makes sense to add this feature otherwise students could edit the library system. 
