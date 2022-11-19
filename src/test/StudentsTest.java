@@ -1,10 +1,12 @@
-package main;
+package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+
+import main.Students;
 
 class StudentsTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void LoanLimitTest() {
         assertEquals("Loan Limit Reached", Students.getLoans<3);
     }
