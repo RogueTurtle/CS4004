@@ -1,6 +1,7 @@
 // Java Program to Illustrate Student Class
 // to take Input from the student and related Information
 package main;
+
 // Importing required classes
 import java.util.Scanner;
 
@@ -9,7 +10,7 @@ public class Student {
 
 	// Class member variables
 	String studentName;
-	String regNum;
+	String studentIdNum;
 
 	Book borrowedBooks[] = new Book[3];
 	public int BooksCount = 0;
@@ -19,8 +20,7 @@ public class Student {
 	Scanner input = new Scanner(System.in);
 
 	// Constructor
-	public Student()
-	{
+	public Student() {
 		// Print statement
 		System.out.println("Enter Student Name:");
 
@@ -29,6 +29,6 @@ public class Student {
 
 		// Print statement
 		System.out.println("Enter Registration Number:");
-		this.regNum = input.nextLine();
+		this.studentIdNum = input.nextLine();
 	}
 }

@@ -22,8 +22,7 @@ public class Book {
 
 	// Method
 	// To add Book details
-	public Book()
-	{
+	public Book() {
 		// Display message for taking input later
 		// taking input via
 		// nextInt() and nextLine() standard methods
