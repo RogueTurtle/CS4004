@@ -1,26 +1,21 @@
-// Java Program to Illustrate Books class
-// To Do all the Operations related to Books such as
-// add, check-in, check-out,Valid Books,Update Books
 package main;
 
-// Importing required classes
 import java.util.Scanner;
 
-// CLass
 public class Books {
 
+	// n defines size of book array
 	int n = 50;
-	// Class data members
 	Book theBooks[] = new Book[n];
 	public static int count;
 
+	// Scanner for user input
 	Scanner input = new Scanner(System.in);
 
-	// Method 1
-	// To compare Books
+	// Method to compare books
 	public int compareBookObjects(Book b1, Book b2) {
 
-		// If Book name matches
+		// If the book name matches
 		if (b1.BookName.equalsIgnoreCase(b2.BookName)) {
 
 			// Printing Book exists
@@ -29,7 +24,7 @@ public class Books {
 			return 0;
 		}
 
-		// if Book serial matches
+		// If the serial number matches
 		if (b1.sNo == b2.sNo) {
 
 			// Print Book exists
@@ -41,8 +36,7 @@ public class Books {
 		return 1;
 	}
 
-	// Method 2
-	// To add Book
+	// Method to add books
 	public void addBook(Book b) {
 		// Make sure we're not adding duplicate books
 		for (int i = 0; i < count; i++) {
@@ -79,20 +73,20 @@ public class Books {
 		}
 	}
 
-	// Method 3
-	// To search Book by serial number
+	// Method to search books by serial number
 	public void searchBySno() {
 
 		// Display message
 		System.out.println(
 				"\t\t\t\tSEARCH BY SERIAL NUMBER\n");
 
-		// Class data members
+		// Variables
 		int sNo;
 		System.out.println("Enter Serial No of Book:");
 		sNo = input.nextInt();
 
 		int flag = 0;
+		
 		System.out.println(
 				"S.No\t\tName\t\tAuthor\t\tAvailable Qty\t\tTotal Qty");
 
@@ -108,13 +102,12 @@ public class Books {
 				return;
 			}
 		}
+		// If no serial number is found
 		if (flag == 0)
-			System.out.println("No Book for Serial No "
-					+ sNo + " Found.");
+			System.out.println("No Book for Serial No: "+ sNo + " Found.");
 	}
 
-	// Method 4
-	// To search author by name
+	// Method to search author by name
 	public void searchByAuthorName() {
 
 		// Display message
@@ -133,11 +126,11 @@ public class Books {
 
 		for (int i = 0; i < count; i++) {
 
-			// if author matches any of its Book
+			// If the author matches any of its Book
 			if (authorName.equalsIgnoreCase(
 					theBooks[i].authorName)) {
 
-				// Print below corresponding credentials
+				// Print the corresponding book details
 				System.out.println(
 						theBooks[i].sNo + "\t\t"
 								+ theBooks[i].BookName + "\t\t"
@@ -148,14 +141,13 @@ public class Books {
 			}
 		}
 
-		// Else no Book matches for author
+		// If no Book matches for author name
 		if (flag == 0)
 			System.out.println("No Books of " + authorName
 					+ " Found.");
 	}
 
-	// Method 5
-	// To display all Books
+	// Method to display all Books
 	public void showAllBooks() {
 
 		System.out.println("\t\t\t\tSHOWING ALL BookS\n");
@@ -173,8 +165,7 @@ public class Books {
 		}
 	}
 
-	// Method 6
-	// To edit the Book
+	// Method to edit the Book Quantity
 	public void upgradeBookQty() {
 
 		System.out.println(
@@ -200,8 +191,7 @@ public class Books {
 		}
 	}
 
-	// Method 7
-	// To create menu
+	// Method to create menu
 	public void dispMenu() {
 		System.out.println(
 				"----------------------------------------------------------------------------------------------------------");
@@ -211,14 +201,13 @@ public class Books {
 		System.out.println("Press 0 to Exit Application.");
 		System.out.println("Press 1 if you are a Student.");
 		System.out.println("Press 2 if you are Staff");
-		System.out.println("Press 3 if you are an Admin");
+		System.out.println("Press 3 if you are and Admin");
 		System.out.println(
 				"-------------------------------------------------------------------------------------------------------");
 	}
 
 	public void dispStudentMenu() {
-
-		// Displaying menu
+		// Student Menu
 		System.out.println(
 				"----------------------------------------------------------------------------------------------------------");
 		System.out.println("Press 0 to Exit Application.");
@@ -231,7 +220,7 @@ public class Books {
 	}
 
 	public void dispStaffMenu() {
-		// Displaying menu
+		// Staff Menu
 		System.out.println(
 				"----------------------------------------------------------------------------------------------------------");
 		System.out.println("Press 0 to Exit Application.");
@@ -248,8 +237,7 @@ public class Books {
 	}
 
 	public void dispAdminMenu() {
-
-		// Displaying menu
+		// Admin Menu
 		System.out.println(
 				"----------------------------------------------------------------------------------------------------------");
 		System.out.println("Press 0 to Exit Application.");
@@ -265,8 +253,7 @@ public class Books {
 				"-------------------------------------------------------------------------------------------------------");
 	}
 	
-	// Method 8
-	// To search the library
+	// Method to search the library
 	public int isAvailable(int sNo) {
 
 		for (int i = 0; i < count; i++) {
@@ -282,13 +269,11 @@ public class Books {
 			}
 		}
 
-		System.out.println("No Book of Serial Number "
-				+ " Available in Library.");
+		System.out.println("No Book of Serial Number " + " Available in Library.");
 		return -1;
 	}
 
-	// Method 9
-	// To remove the Book from the library
+	// Method to check out the Book from the library
 	public Book checkOutBook() {
 
 		System.out.println(
@@ -304,8 +289,7 @@ public class Books {
 		return null;
 	}
 
-	// Method 10
-	// To add the Book to the Library
+	// Method to check in the Book to the Library
 	public void checkInBook(Book b) {
 		for (int i = 0; i < count; i++) {
 			if (b.equals(theBooks[i])) {
