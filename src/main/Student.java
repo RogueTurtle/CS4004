@@ -1,33 +1,28 @@
-// Java Program to Illustrate Student Class
-// to take Input from the student and related Information
+
 package main;
 
-// Importing required classes
 import java.util.Scanner;
 
-// Class
 public class Student {
 
-	// Class member variables
+	// Variables
 	String studentName;
 	String studentIdNum;
 
+	// Array of Book object for borrowed Books
 	Book borrowedBooks[] = new Book[3];
 	public int BooksCount = 0;
 
-	// Creating object of Scanner class to
-	// take input from user
+	// Scanner for user input
 	Scanner input = new Scanner(System.in);
 
 	// Constructor
 	public Student() {
-		// Print statement
 		System.out.println("Enter Student Name:");
 
 		// This keywords refers to current instance
 		this.studentName = input.nextLine();
 
-		// Print statement
 		System.out.println("Enter Registration Number:");
 		this.studentIdNum = input.nextLine();
 	}
