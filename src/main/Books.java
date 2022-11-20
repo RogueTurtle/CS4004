@@ -211,7 +211,7 @@ public class Books {
 		System.out.println("Press 0 to Exit Application.");
 		System.out.println("Press 1 if you are a Student.");
 		System.out.println("Press 2 if you are Staff");
-		System.out.println("Press 3 if you are and Admin");
+		System.out.println("Press 3 if you are an Admin");
 		System.out.println(
 				"-------------------------------------------------------------------------------------------------------");
 	}
