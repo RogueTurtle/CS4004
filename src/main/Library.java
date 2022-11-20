@@ -232,9 +232,6 @@ public class Library {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	
-		
-	
 	}
 	// Method for Admin Menu
 	public void admin() {
