@@ -1,33 +1,24 @@
-// Java Program to Illustrate Students Class
-// To Do all the Operations related to Students:
-// add Students,check-in books,check out books,ValidStudent
+
 package main;
 
 import java.time.LocalDate;
-// Importing required classes
 import java.util.Scanner;
 
-// Class
 public class Students {
-
 	// Creating objects of Scanner and Students class
 	Scanner input = new Scanner(System.in);
 	Student theStudents[] = new Student[50];
 
 	public static int count = 0;
 
-	// Method 1
-	// To add Books
+	// Method to add Students
 	public void addStudent(Student s) {
 		for (int i = 0; i < count; i++) {
 
 			if (s.studentIdNum.equalsIgnoreCase(
 					theStudents[i].studentIdNum)) {
 
-				// Print statement
-				System.out.println(
-						"Student of Id Number: " + s.studentIdNum
-								+ " is Already Registered.");
+				System.out.println("Student of Id Number: " + s.studentIdNum + " is Already Registered.");
 
 				return;
 			}
@@ -39,11 +30,9 @@ public class Students {
 		}
 	}
 
-	// Method 2
-	// Displaying all Students
+	// Method for displaying all Students
 	public void showAllStudents() {
-		// Printing Student name and
-		// corresponding registered number
+		// Printing Student name and corresponding student ID
 		System.out.println("Student Name\t\tId Number");
 		for (int i = 0; i < count; i++) {
 
@@ -53,31 +42,28 @@ public class Students {
 		}
 	}
 
-	// Method 3
-	// To check the Student
+	// Method to check the Student Id
 	public int isStudent() {
-		// Display message only
-		System.out.println("Enter Reg Number:");
+		
+		System.out.println("Enter Id Number:");
 
-		String regNum = input.nextLine();
+		String idNum = input.nextLine();
 
 		for (int i = 0; i < count; i++) {
 
 			if (theStudents[i].studentIdNum.equalsIgnoreCase(
-					regNum)) {
+					idNum)) {
 				return i;
 			}
 		}
 
-		// Print statements
 		System.out.println("Student is not Registered.");
 		System.out.println("Get Registered First.");
 
 		return -1;
 	}
 
-	// Method 4
-	// To remove the Book
+	// Method to check out Book
 	public void checkOutBook(Books Book) {
 		int StudentIndex = this.isStudent();
 
@@ -108,8 +94,7 @@ public class Students {
 		}
 	}
 
-	// Method 5
-	// To add the Book
+	// Method to add the Book
 	public void checkInBook(Books Book) {
 		int StudentIndex = this.isStudent();
 		if (StudentIndex != -1) {
@@ -128,9 +113,7 @@ public class Students {
 								+ s.borrowedBooks[i].authorName);
 			}
 
-			// Display message only
-			System.out.println(
-					"Enter Serial Number of Book to be Checked In:");
+			System.out.println("Enter Serial Number of Book to be Checked In:");
 
 			int sNo = input.nextInt();
 
@@ -143,8 +126,7 @@ public class Students {
 				}
 			}
 
-			System.out.println("Book of Serial No " + sNo
-					+ "not Found");
+			System.out.println("Book of Serial No " + sNo + "not Found");
 		}
 	}
 
